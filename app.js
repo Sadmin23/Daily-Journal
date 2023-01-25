@@ -19,15 +19,13 @@ app.get("/", function(req, res){
   res.render("home.ejs", {homeStartingContent: homeStartingContent});
 })
 
+app.get("/about", function(req, res){
+  res.render("about.ejs", {aboutContent: aboutContent});
+})
 
-
-
-
-
-
-
-
-
+app.get("/contact", function(req, res){
+  res.render("contact.ejs", {contactContent: contactContent});
+})
 
 
 app.listen(3000, function() {
