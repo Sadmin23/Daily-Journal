@@ -29,6 +29,12 @@ app.get("/contact", function(req, res){
 
 app.get("/compose", function(req, res){
   res.render("compose.ejs");
+
+  app.post("/", function(req, res){
+    console.log(req.body.title);
+    console.log(req.body.post);
+  })
+
 })
 
 app.listen(3000, function() {
