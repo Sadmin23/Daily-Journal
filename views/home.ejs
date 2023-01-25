@@ -2,7 +2,8 @@
 <h1>Home</h1>
 <p><%= homeStartingContent %></p>
 
-<% for(i=0; i<BlogPost.length; i++) console.log(BlogPost[i].postTitle);
-%>
-  <%- include("partials/footer"); -%>
-
+<% BlogPost.forEach(element => {%>
+<h1><%=element.postTitle%></h1>
+<p><%= element.postBody %></p>
+<%}); %> 
+<%-include("partials/footer"); -%>
