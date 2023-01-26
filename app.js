@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const { text } = require("body-parser");
-var _ = require('lodash');
+const _ = require('lodash');
 
 let BlogPost = [];
 
@@ -48,17 +48,14 @@ app.get("/compose", function(req, res){
 app.get("/post/:text", (req, res) => {
 
   let sTitle = _.lowerCase(req.params.text)
-  // _.lowerCase(req.params.text);
 
   BlogPost.forEach(element => {
 
     let rTitle = _.lowerCase(element.postTitle);
 
     if (sTitle===rTitle){
-      console.log("Match Found");
+      res.render("post.ejs", {Title: element.postTitle, Content: element.postBody});
     }
-    else
-      console.log("No Match Found");
   })
 })
 
