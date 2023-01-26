@@ -15,6 +15,7 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const app = express();
 
 app.set('view engine', 'ejs');
+app.locals._ = _;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
