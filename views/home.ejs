@@ -7,7 +7,7 @@
 <h1><%=post.Name%></h1>
 <p>
   <%=post.Post.substring(0, 100) + " ..."%>
-  <a href="/posts/<%=post.Name%>">Read More</a>
+  <a href="/posts/<%=post._id%>">Read More</a>
 </p>
 
 <% }) %> <%- include("partials/footer"); -%>

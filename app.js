@@ -63,9 +63,18 @@ app.post("/compose", function(req, res){
 
 });
 
-app.get("/posts/:postName", function(req, res){
-  const requestedTitle = _.lowerCase(req.params.postName);
+app.get("/posts/:postid", function(req, res){
+  const p_id = req.params.postid;
 
+  Blog.findById(p_id, function(err, post){
+    res.render("post", {
+      Name: post.Name,
+      Post: post.Post
+    });
+  });
+
+
+/*
   posts.forEach(function(post){
     const storedTitle = _.lowerCase(post.title);
 
@@ -75,7 +84,7 @@ app.get("/posts/:postName", function(req, res){
         content: post.content
       });
     }
-  });
+  });*/
 
 });
 
