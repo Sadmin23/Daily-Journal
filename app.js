@@ -72,20 +72,6 @@ app.get("/posts/:postid", function(req, res){
       Post: post.Post
     });
   });
-
-
-/*
-  posts.forEach(function(post){
-    const storedTitle = _.lowerCase(post.title);
-
-    if (storedTitle === requestedTitle) {
-      res.render("post", {
-        title: post.title,
-        content: post.content
-      });
-    }
-  });*/
-
 });
 
 
